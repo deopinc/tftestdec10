@@ -5,6 +5,15 @@ terraform {
       version = "3.35.0"
     }
   }
+
+  backend "remote" {
+    organization = "erolk"
+
+    workspaces {
+      name = "dev-api"
+    }
+  }
+
 }
 
 provider "azurerm" {
